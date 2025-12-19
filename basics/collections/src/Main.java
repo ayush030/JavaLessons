@@ -8,7 +8,7 @@ public class Main {
         // List
         ListCollection lc = new ListCollection();
 
-        // List
+        // array list
         lc.slice.addToList("Hello");
         lc.slice.addToList("World");
         lc.slice.printList(); //  [Hello, World]
