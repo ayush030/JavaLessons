@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--dependent bean : Tyre-->
+    <bean id="mrfTyresBean" class="tyre.Tyre">
+        <property name="make" value="MRF" />
+        <property name="model" value="RF-123" />
+        <property name="size" value="16 inches" />
+    </bean>
+
+    <bean id="ceatTyresBean" class="tyre.Tyre">
+        <property name="make" value="Ceat" />
+        <property name="model" value="Ceat456" />
+        <property name="size" value="14 inches" />
+    </bean>
+
+    <!--dependent bean : Engine-->
+    <bean id="rrPhantomBean" class="engine.RollsRoyce">
+        <property name="model" value="RR-Diesel" />
+        <property name="make" value="Phantom" />
+        <property name="power" value="V8" />
+        <property name="emissionNorms" value="BS6" />
+        <property name="cost" value="$123456" />
+    </bean>
+
+    <bean id="rrGhostBean" class="engine.RollsRoyce">
+        <property name="model" value="RR-EV" />
+        <property name="make" value="Ghost" />
+        <property name="power" value="V8" />
+        <property name="emissionNorms" value="BS6" />
+        <property name="cost" value="$654321" />
+    </bean>
+
+
+    <!-- Target bean class for SDI(Setter Dependency Injection)-->
+    <bean id="SDI" class="vehicle.Vehicle">
+        <property name="tyre" ref="mrfTyresBean" />
+        <property name="engine" ref="rrPhantomBean" />
+    </bean>
+
+
+    <!-- Target bean class for CDI(Constructor Dependency Injection)-->
+    <bean id="CDI" class="vehicle.Vehicle">
+        <constructor-arg name="engine" ref="rrGhostBean" />
+        <constructor-arg name="tyre" ref="ceatTyresBean" />
+    </bean>
+</beans>
