@@ -1,3 +1,6 @@
 .idea/
 springboot/dependencyInjection/configurationDependencyInjection/build/
 springboot/dependencyInjection/configurationDependencyInjection/app/build/
+
+springboot/dependencyInjection/annotationDependencyInjection/build/
+springboot/dependencyInjection/annotationDependencyInjection/app/build/
