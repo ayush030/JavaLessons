@@ -24,8 +24,10 @@
    
 ## Pointers on dependency injection
 
-1. real-world Spring applications use constructor dependency injection(CDI)
-2. avoid XML configuration and use annotations
+1. real-world Spring applications prefer constructor dependency injection(CDI) between both types of XML dependency injection.
+2. Although Configuration dependency injection and annotations is preferred over XML injection.
+3. avoid XML configuration and use annotations
+
 ```bash
     | XML concept              | Annotation equivalent                |
     | ------------------------ | ------------------------------------ |
